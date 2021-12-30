@@ -1,0 +1,51 @@
+/* split this file up */
+* {
+  margin: 0;
+  padding: 0;
+}
+.app {
+  font-family: sans-serif;
+  text-align: center;
+}
+.main-card-container {
+  display: flex;
+  flex-direction: row;
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  border: 3px solid rgb(226, 226, 226);
+  border-radius: 2%;
+  padding: 3px;
+  margin: 10px 0 0 10px;
+}
+.card-container:hover {
+  border: 3px dotted rgb(226, 226, 226);
+}
+.card-container img {
+  width: 100%;
+}
+.product-properties {
+  padding: 5px 0 0 0;
+}
+.product-add-button {
+  width: 50%;
+  border: 0;
+}
+.header-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+.logo {
+  padding-right: 60%;
+}
+.shopping-cart {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+}
