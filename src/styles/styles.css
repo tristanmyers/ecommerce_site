@@ -29,10 +29,6 @@
 .product-properties {
   padding: 5px 0 0 0;
 }
-.product-add-button {
-  width: 50%;
-  border: 0;
-}
 .header-container {
   display: flex;
   flex-direction: row;
