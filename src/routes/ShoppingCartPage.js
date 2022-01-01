@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import { products } from "../index.js";
 import ShoppingCartItem from "../components/ShoppingCartItem.js";
 
+// TODO: uses sessionStorage and hooks to keep track of how many items on are the cart
 const cartStorage = window.sessionStorage;
 const items = JSON.parse(cartStorage.getItem("itemsInCart"));
 
