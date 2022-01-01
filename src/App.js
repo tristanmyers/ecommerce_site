@@ -2,11 +2,12 @@ import React from "react";
 
 import "./styles/styles.css";
 import { products } from "./index.js";
-import Card from "./components/Card.js";
+import ItemCard from "./components/ItemCard.js";
 import Header from "./components/Header.js";
 
 export const cartStorage = window.sessionStorage;
 export default class App extends React.Component {
+  // none of the state and constructor stuff is needed right now
   constructor(props) {
     super(props);
     this.addItemToCart = this.addItemToCart.bind(this);
@@ -30,12 +31,12 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Header itemsInCart={this.state.itemsInCart} cartItemCounter={this.state.itemsInCart.length} />
+        <Header />
         <section className="main-card-container">
           {
             products.map((product, index) => {
               return (
-                <Card
+                <ItemCard
                 key={index}
                 itemId={products[index]["itemId"]}
                 itemName={products[index]["itemName"]}

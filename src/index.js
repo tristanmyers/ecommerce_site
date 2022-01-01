@@ -3,8 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import React from "react";
 import App from "./App.js";
-import Cart from "./routes/Cart.js";
+import Cart from "./components/ShoppingCart.js";
 import ProductPage from "./routes/ProductPage.js";
+import ShoppingCartPage from "./routes/ShoppingCartPage.js";
 
 const rootElement = document.getElementById("root");
 export const products = [
@@ -33,6 +34,7 @@ ReactDOM.render(
         <Route path="productpage" element={<ProductPage />}>
           <Route path=":itemId" element={<ProductPage />} />
         </Route>
+        <Route path="shoppingcart" element={<ShoppingCartPage />}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
