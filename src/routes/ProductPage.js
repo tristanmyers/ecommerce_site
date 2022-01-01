@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import Header from "../components/Header.js";
 import { products } from "../index.js";
 
-export const cartStorage = window.sessionStorage;
+const cartStorage = window.sessionStorage;
 
 export default function ProductPage(props) {
 	// show product corresponding to the id in the url
