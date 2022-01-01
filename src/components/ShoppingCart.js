@@ -1,6 +1,9 @@
 import React from "react";
-// class components can have state and need the render function
-// to re-render everytime the state changes
+
+const cartStorage = window.sessionStorage;
+const items = JSON.parse(cartStorage.getItem("itemsInCart"));
+console.log(items)
+
 export default class ShoppingCart extends React.Component {
   render() {
     return (
