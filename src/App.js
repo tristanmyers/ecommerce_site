@@ -2,8 +2,9 @@ import React from "react";
 
 import "./styles/styles.css";
 import { products } from "./index.js";
-import ItemCard from "./components/ItemCard.js";
 import Header from "./components/Header.js";
+import Footer from "./components/Footer.js";
+import ItemCard from "./components/ItemCard.js";
 
 export const cartStorage = window.sessionStorage;
 export default class App extends React.Component {
@@ -28,26 +29,28 @@ export default class App extends React.Component {
     });
     cartStorage.setItem("itemsInCart", JSON.stringify({"name": name, "price": price}));
   }
+  renderCard() {
+    return products.map((product, index) => {
+      return (
+        <ItemCard
+        key={index}
+        itemId={products[index]["itemId"]}
+        itemName={products[index]["itemName"]}
+        itemPrice={products[index]["itemPrice"]}
+        itemDesc={products[index]["itemDesc"]}
+        itemImage={products[index]["itemImage"]}  
+        />
+      );
+    })
+  }
   render() {
     return (
       <div className="app">
         <Header />
         <section className="main-card-container">
-          {
-            products.map((product, index) => {
-              return (
-                <ItemCard
-                key={index}
-                itemId={products[index]["itemId"]}
-                itemName={products[index]["itemName"]}
-                itemPrice={products[index]["itemPrice"]}
-                itemDesc={products[index]["itemDesc"]}
-                itemImage={products[index]["itemImage"]}  
-                />
-              );
-            })
-          }
+          {this.renderCard()}
         </section>
+        <Footer />
       </div>
     );
   }
