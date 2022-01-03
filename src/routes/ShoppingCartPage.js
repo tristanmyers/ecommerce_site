@@ -3,28 +3,28 @@ import Header from "../components/Header";
 import { products } from "../index.js";
 import ShoppingCartItem from "../components/ShoppingCartItem.js";
 
-// TODO: uses sessionStorage and hooks to keep track of how many items on are the cart
 const cartStorage = window.sessionStorage;
 const items = JSON.parse(cartStorage.getItem("itemsInCart"));
 
 export default function ShoppingCartPage(props) {
 	return (
     <div>
-      <Header />   
+      <Header />
 			{renderItemsInCart()}
 		</div>
 	);
 }
-
+/* 
+getting ids for available products, for each item check if the id matches an id in availableProductIds
+if so render the ShoppingCartItem component.
+*/ 
 function renderItemsInCart() {
-	// match the item id and render them
-	return (
-		products.filter((product, index) => products[index]["itemId"] === Number(items["itemId"]))
-		.map((product, index) => {
-				return (
-					<ShoppingCartItem key={index} itemName={product.itemName} itemQuantity={items["quantity"]}/>
-				);
-			}
-		)
-	)
+	const availableProductsIds = products.map((product, index) => products[index].itemId);
+	return items.map((item, index) => {
+		if (Number(item.itemId) === availableProductsIds[item.itemId]) {
+			return <ShoppingCartItem key={index} itemId={item.itemId} itemName={products[item.itemId].itemName} itemQuantity={items[index].quantity}/>
+		} else {
+			return <p>Item not avaiable</p>
+		}
+	})
 }
