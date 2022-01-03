@@ -29,3 +29,28 @@ developing a MPA that uses somthing like shopify seems like the better choice fo
 		2. price (from products)
 		3. quantity (from form)
 	* can i use a onclick function?
+		* yes
+
+### How i'm rendering items in the cart
+
+```js 
+function renderItemsInCart() {
+	const availableProductsIds = products.map((product, index) => products[index].itemId);
+	return items.map((item, index) => {
+		if (Number(item.itemId) === availableProductsIds[item.itemId]) {
+			return <ShoppingCartItem key={index} itemName={products[item.itemId].itemName} itemQuantity={products[item.itemId].itemQuantity}/>
+		} else {
+			return <p>Item not avaiable</p>
+		}
+	})
+}
+```
+Now the problem with this code is that it would
+scale terribly in a real platform that generates
+product ids in a different manner.
+> the question is, how do ecommerce plaforms generate product ids?
+
+My platform ids are manually typed in counting up from 0...
+
+Then when i'm rendering the items from the cart, it's using the itemId as the index of the products array to grab properties from.
+If real platforms did use this way of generating ids then this works fine, if they don't welp I would have to create a new way of generating ids as items are put into the "database".  

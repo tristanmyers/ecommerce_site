@@ -51,7 +51,15 @@ export default function ProductPage(props) {
 	);
 }
 
+// checks if there are any itemsInCart in sessionStorage if not setItem normally.
+// if there are items, parse the current stored item and push the new item onto the array of objects then setitem
 function addToCart(id) {
 	let itemQuantity = document.querySelector("#number-of-items-select").selectedOptions[0].value;
-	cartStorage.setItem("itemsInCart", JSON.stringify({itemId: id, quantity: itemQuantity}));
+	if (cartStorage.getItem("itemsInCart") === null) {
+		cartStorage.setItem("itemsInCart", JSON.stringify([{itemId: id, quantity: itemQuantity}]));
+	} else {
+		const currentStorage = JSON.parse(cartStorage.getItem("itemsInCart"));
+		currentStorage.push({itemId: id, quantity: itemQuantity});
+		cartStorage.setItem("itemsInCart", JSON.stringify(currentStorage));
+	}
 }

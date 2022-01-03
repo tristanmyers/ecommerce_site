@@ -49,3 +49,10 @@
 .shopping-cart-item {
   border: 1px solid black;
 }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  border-top: 2px solid black;
+  width: 100%
+}
