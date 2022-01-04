@@ -2,7 +2,6 @@ import React from "react"
 
 const cartStorage = window.sessionStorage;
 const items = JSON.parse(cartStorage.getItem("itemsInCart"));
-console.log(items)
 
 // TODO: rerender after item has been removed
 export default function ShoppingCartItem(props) {
