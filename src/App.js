@@ -1,12 +1,14 @@
 import React from "react";
 
-import "./styles/styles.css";
+import "./index.css";
 import { products } from "./index.js";
 import Header from "./components/Header.js";
 import Footer from "./components/Footer.js";
 import ItemCard from "./components/ItemCard.js";
 
 export const cartStorage = window.sessionStorage;
+
+// starting resolution is 360 width
 export default class App extends React.Component {
   // none of the state and constructor stuff is needed right now
   constructor(props) {
