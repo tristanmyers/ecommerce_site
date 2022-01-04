@@ -53,4 +53,4 @@ product ids in a different manner.
 My platform ids are manually typed in counting up from 0...
 
 Then when i'm rendering the items from the cart, it's using the itemId as the index of the products array to grab properties from.
-If real platforms did use this way of generating ids then this works fine, if they don't welp I would have to create a new way of generating ids as items are put into the "database".  
+If real platforms did use this way of generating ids then this works fine, if they don't welp I would have to create a new way of generating ids as items are put into the "database".
