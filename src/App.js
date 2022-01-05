@@ -1,34 +1,15 @@
 import React from "react";
 
-import "./styles/styles.css";
+import "./index.css";
 import { products } from "./index.js";
 import Header from "./components/Header.js";
 import Footer from "./components/Footer.js";
 import ItemCard from "./components/ItemCard.js";
 
 export const cartStorage = window.sessionStorage;
+
+// starting resolution is 360 width
 export default class App extends React.Component {
-  // none of the state and constructor stuff is needed right now
-  constructor(props) {
-    super(props);
-    this.addItemToCart = this.addItemToCart.bind(this);
-    this.state = {
-      itemsInCart: [],
-      cartItemCounter: 0
-    };
-  }
-  addItemToCart(name, price) {
-    this.setState({
-      itemsInCart: [
-        ...this.state.itemsInCart,
-        {itemName: name, itemPrice: price}
-      ]
-    });
-    this.setState({
-      cartItemCounter: this.state.itemsInCart.length + 1
-    });
-    cartStorage.setItem("itemsInCart", JSON.stringify({"name": name, "price": price}));
-  }
   renderCard() {
     return products.map((product, index) => {
       return (
@@ -45,9 +26,9 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <div className="app">
+      <div className="app flex flex-col bg-main-background text-main-font font-light">
         <Header />
-        <section className="main-card-container">
+        <section className="main-card-container flex flex-col space-y-0.5">
           {this.renderCard()}
         </section>
         <Footer />

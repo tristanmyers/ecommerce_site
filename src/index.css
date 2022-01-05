@@ -1,9 +1,14 @@
-/* split this file up */
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
 }
-.app {
+/* .app {
   font-family: sans-serif;
   text-align: center;
 }
@@ -55,4 +60,4 @@
   bottom: 0;
   border-top: 2px solid black;
   width: 100%
-}
+} */
