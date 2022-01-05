@@ -1,5 +1,6 @@
 import React from "react";
-import Header from "../components/Header";
+import Header from "../components/Header.js";
+import Footer from '../components/Footer.js'
 import { products } from "../index.js";
 import ShoppingCartItem from "../components/ShoppingCartItem.js";
 
@@ -8,9 +9,10 @@ const items = JSON.parse(cartStorage.getItem("itemsInCart"));
 
 export default function ShoppingCartPage(props) {
 	return (
-    <div>
+    <div className="flex flex-col bg-main-background text-main-font font-light">
       <Header />
 			{renderItemsInCart()}
+			<Footer />
 		</div>
 	);
 }

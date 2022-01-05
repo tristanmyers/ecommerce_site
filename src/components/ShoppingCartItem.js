@@ -6,10 +6,11 @@ const items = JSON.parse(cartStorage.getItem("itemsInCart"));
 // TODO: rerender after item has been removed
 export default function ShoppingCartItem(props) {
 	return (
-		<div className="shopping-cart-item">
-			<h3>{props.itemName}</h3>
-			<p>{props.itemQuantity}</p>
-			<button className="cart-remove-button" type="button" onClick={() => removeItemFromCart(props.itemId)}>
+		<div className="cart-item-container bg-white flex flex-row h-1/3 py-2 border-y-2 border-white rounded">
+			<p>{props.itemName} {props.itemQuantity}</p>
+			<button className="cart-remove-button"
+			 type="button" 
+			 onClick={() => removeItemFromCart(props.itemId)}>
 			Remove item</button>
 		</div>
 	);
