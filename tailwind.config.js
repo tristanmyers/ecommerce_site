@@ -1,9 +1,23 @@
 module.exports = {
   content: [
-    "./src/*/*.js"
+    "./public/index.html",
+    "./src/**/*.{html,js}"
   ],
   theme: {
-    extend: {},
+    screens: {
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px',
+    },
+    colors: {
+      'main-background': '#E4E4E4',
+      'main-font': '#1b323c',
+      'white': '#ffffff'
+    },
+    fontFamily: {
+      sans: ['Readex Pro', 'sans-serif']
+    }
   },
   plugins: [],
 }
