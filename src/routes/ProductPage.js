@@ -26,7 +26,7 @@ export default function ProductPage(props) {
 						<form id="add-to-cart-form" name="add-to-cart-form" className="self-end">
 							<fieldset>
 								<select
-								className="border border-black" 
+								className="bg-white border border-black" 
 								name="number-of-items" id="number-of-items-select" defaultValue="one">
 									<option value="1">1</option>
 									<option value="2">2</option>

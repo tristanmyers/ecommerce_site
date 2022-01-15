@@ -9,7 +9,7 @@ const items = JSON.parse(cartStorage.getItem("itemsInCart"));
 
 export default function ShoppingCartPage(props) {
 	return (
-    <div className="flex flex-col bg-main-background text-main-font font-light">
+    <div className="flex flex-col gap-1 font-light bg-main-background text-main-font">
       <Header />
 			{renderItemsInCart()}
 			<Footer />

@@ -13,7 +13,8 @@ module.exports = {
     colors: {
       'main-background': '#E4E4E4',
       'main-font': '#1b323c',
-      'white': '#ffffff'
+      'white': '#ffffff',
+      'grey': '#D6D6D6'
     },
     fontFamily: {
       sans: ['Readex Pro', 'sans-serif']

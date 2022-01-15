@@ -26,7 +26,7 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <div className="app flex flex-col bg-main-background text-main-font font-light">
+      <div className="flex flex-col font-light app bg-main-background text-main-font">
         <Header />
         <section className="main-card-container flex flex-col space-y-0.5">
           {this.renderCard()}
