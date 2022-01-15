@@ -27,7 +27,7 @@ function renderItemsInCart() {
 	} else {
 		return items.map((item, index) => {
 			if (Number(item.itemId) === availableProductsIds[item.itemId]) {
-				return <ShoppingCartItem key={index} itemId={item.itemId} itemName={products[item.itemId].itemName} itemQuantity={items[index].quantity}/>
+				return <ShoppingCartItem key={index} itemId={item.itemId} itemName={products[item.itemId].itemName} itemQuantity={items[index].quantity} itemImage={products[index].itemImage}/>
 			} else {
 				return <p>Item not avaiable</p>
 			}

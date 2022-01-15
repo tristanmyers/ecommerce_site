@@ -36,7 +36,7 @@ export default function ProductPage(props) {
 							</fieldset>
 						</form>
 						<button
-							className="px-4 py-2 bg-white border border-solid"
+							className="px-4 py-2 bg-white border border-solid hover:bg-grey"
 							id="add-to-cart-button"
 							name="add-to-cart-button"
 							type="button"
