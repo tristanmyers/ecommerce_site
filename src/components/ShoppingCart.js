@@ -1,6 +1,4 @@
 import React from "react";
-
-// TODO: rerender when itemsInCart has been updated.
 export default class ShoppingCart extends React.Component {
   render() {
     return (

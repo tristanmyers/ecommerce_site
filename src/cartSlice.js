@@ -16,9 +16,9 @@ export const cartSlice = createSlice({
 				if (action.payload === item.itemId) {
 					state.itemsInCart.splice(index, 1);
 					cartStorage.setItem("itemsInCart", JSON.stringify(state.itemsInCart));
-					state.numberOfItems = state.itemsInCart.length;
+					return state.numberOfItems = state.itemsInCart.length;
 				}	else {
-					console.log("no item to remove");
+					return console.log("no item to remove");
 				}
 			})
 		},

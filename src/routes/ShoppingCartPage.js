@@ -6,7 +6,7 @@ import { products } from "../index.js";
 import ShoppingCartItem from "../components/ShoppingCartItem.js";
 
 
-export default function ShoppingCartPage(props) {
+export default function ShoppingCartPage() {
 	const items = useSelector((state) => state.cart.itemsInCart);
 	
 	// getting ids for available products, for each item check if the id matches an id in availableProductIds if so render the ShoppingCartItem component.
@@ -17,7 +17,7 @@ export default function ShoppingCartPage(props) {
 		} else {
 			return items.map((item, index) => {
 				if (Number(item.itemId) === availableProductsIds[item.itemId]) {
-					return <ShoppingCartItem key={index} itemId={item.itemId} itemName={products[item.itemId].itemName} itemQuantity={items[index].quantity} itemImage={products[index].itemImage} />
+					return <ShoppingCartItem key={index} itemId={item.itemId} itemName={products[item.itemId].itemName} itemQuantity={items[index].quantity} itemImage={products[item.itemId].itemImage.toString()} />
 				} else {
 					return <p>Item not available</p>
 				}
