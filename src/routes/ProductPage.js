@@ -1,15 +1,16 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
+import { useDispatch } from "react-redux"
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js"
 import { products } from "../index.js";
-
-const cartStorage = window.sessionStorage;
+import { addItemToCart } from "../cartSlice.js"
 
 export default function ProductPage(props) {
 	// show product corresponding to the id in the url
 	let [searchParams] = useSearchParams();
 	let itemId = searchParams.get("itemId");
+	const dispatch = useDispatch();
 	return (
 		<div className="flex flex-col font-light bg-main-background text-main-font">
 			<Header />
@@ -40,7 +41,7 @@ export default function ProductPage(props) {
 							id="add-to-cart-button"
 							name="add-to-cart-button"
 							type="button"
-							onClick={() => addToCart(itemId)}
+							onClick={() => dispatch(addItemToCart(itemId))}
 						>
 							Add to cart
 						</button>
@@ -50,17 +51,4 @@ export default function ProductPage(props) {
 			<Footer />
 		</div>
 	);
-}
-
-// checks if there are any itemsInCart in sessionStorage if not setItem normally.
-// if there are items, parse the current stored item and push the new item onto the array of objects then setitem
-function addToCart(id) {
-	let itemQuantity = document.querySelector("#number-of-items-select").selectedOptions[0].value;
-	if (cartStorage.getItem("itemsInCart") === null) {
-		cartStorage.setItem("itemsInCart", JSON.stringify([{itemId: id, quantity: itemQuantity}]));
-	} else {
-		const currentStorage = JSON.parse(cartStorage.getItem("itemsInCart"));
-		currentStorage.push({itemId: id, quantity: itemQuantity});
-		cartStorage.setItem("itemsInCart", JSON.stringify(currentStorage));
-	}
 }
