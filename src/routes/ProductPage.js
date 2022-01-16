@@ -17,7 +17,7 @@ export default function ProductPage(props) {
 			<section className="grid grid-cols-2">
 				<div className="pl-2">
 					<img className="self-center w-full h-80" 
-					src={products[itemId]["itemImage"]} alt="black and white sneaker"/>
+					src={products[itemId]["itemImage"]} alt="shoe"/>
 				</div>
 				<div className="flex flex-col pl-6">
 					<h2 className="text-lg">{products[itemId]["itemName"]}</h2>

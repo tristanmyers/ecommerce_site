@@ -5,14 +5,14 @@ export default class ItemCard extends React.Component {
   render() {
     return (
       // why isn't this white?
-      <div className="card-container bg-white flex flex-row py-2 border-y-2 border-white rounded">
+      <div className="flex flex-row py-2 bg-white border-white rounded card-container border-y-2">
         <img
           src={this.props.itemImage}
-          alt="a white and black adidas sneaker"
+          alt="shoe"
           className="w-56 mr-6"
         />
-        <div className="product-properties flex flex-col items-start w-full mr-1 gap-1">
-          <h3 className="product-name text-lg">{this.props.itemName}</h3>
+        <div className="flex flex-col items-start w-full gap-1 mr-1 product-properties">
+          <h3 className="text-lg product-name">{this.props.itemName}</h3>
           <p className="product-desc">{this.props.itemDesc}</p>
           <p className="product-price">
             <strong>${this.props.itemPrice}</strong>
