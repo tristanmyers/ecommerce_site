@@ -16,28 +16,28 @@ export const products = [
     itemName: "Cool Shoe",
     itemPrice: 300,
     itemDesc: "dis shoe feel cool",
-    itemImage: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/5bc6230d24924736ab03ab4a009aed6c_9366/Fluidstreet_Shoes_Black_FW1703_01_standard.jpg"
+    itemImage: process.env.PUBLIC_URL + "/images/adidas.webp"
   },
   {
     itemId: 1,
     itemName: "Neat Shoe",
     itemPrice: 50,
     itemDesc: "dis shoe feel neat",
-    itemImage: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/5bc6230d24924736ab03ab4a009aed6c_9366/Fluidstreet_Shoes_Black_FW1703_01_standard.jpg"
+    itemImage: process.env.PUBLIC_URL + "/images/converse_boot.jpg"
   },
   {
     itemId: 2,
     itemName: "Strong Shoe",
     itemPrice: 400,
     itemDesc: "dis shoe feel strong",
-    itemImage: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/5bc6230d24924736ab03ab4a009aed6c_9366/Fluidstreet_Shoes_Black_FW1703_01_standard.jpg"
+    itemImage: process.env.PUBLIC_URL + "/images/dr_martens.jpg"
   },
   {
     itemId: 3,
     itemName: "Light Shoe",
     itemPrice: 100,
     itemDesc: "dis shoe feel light",
-    itemImage: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/5bc6230d24924736ab03ab4a009aed6c_9366/Fluidstreet_Shoes_Black_FW1703_01_standard.jpg"
+    itemImage: process.env.PUBLIC_URL + "/images/nike_shoe.webp"
   },
 ];
 
