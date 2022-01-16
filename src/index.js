@@ -1,7 +1,9 @@
 import ReactDOM from "react-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider } from 'react-redux';
+
+import store from "./store.js";
 import App from "./App.js";
 import Cart from "./components/ShoppingCart.js";
 import ProductPage from "./routes/ProductPage.js";
@@ -41,16 +43,18 @@ export const products = [
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}/>
-        <Route path="cart" element={<Cart />}/>
-        <Route path="productpage" element={<ProductPage />}>
-          <Route path=":itemId" element={<ProductPage />} />
-        </Route>
-        <Route path="shoppingcart" element={<ShoppingCartPage />}/>
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />}/>
+          <Route path="cart" element={<Cart />}/>
+          <Route path="productpage" element={<ProductPage />}>
+            <Route path=":itemId" element={<ProductPage />} />
+          </Route>
+          <Route path="shoppingcart" element={<ShoppingCartPage />}/>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   rootElement
 );
