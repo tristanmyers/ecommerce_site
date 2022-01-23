@@ -12,7 +12,7 @@ export default function ProductPage(props) {
 	let itemId = searchParams.get("itemId");
 	const dispatch = useDispatch();
 	return (
-		<div className="flex flex-col font-light bg-main-background text-main-font">
+		<div className="flex flex-col h-screen font-light bg-main-background text-main-font">
 			<Header />
 			<section className="grid grid-cols-2">
 				<div className="pl-2">
