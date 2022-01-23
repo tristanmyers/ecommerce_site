@@ -11,6 +11,7 @@ export const cartSlice = createSlice({
 		numberOfItems: itemsLength
 	},
 	reducers: {
+		//TODO: this removes all the items with the same id
 		removeItemFromCart: (state, action) => {
 			state.itemsInCart.map((item, index) => {
 				if (action.payload === item.itemId) {

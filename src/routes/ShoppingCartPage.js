@@ -17,7 +17,7 @@ export default function ShoppingCartPage() {
 		} else {
 			return items.map((item, index) => {
 				if (Number(item.itemId) === availableProductsIds[item.itemId]) {
-					return <ShoppingCartItem key={index} itemId={item.itemId} itemName={products[item.itemId].itemName} itemQuantity={items[index].quantity} itemImage={products[item.itemId].itemImage.toString()} />
+					return <ShoppingCartItem key={index} itemId={item.itemId} itemName={products[item.itemId].itemName} itemQuantity={items[index].quantity} itemImage={products[item.itemId]["itemImage"]} />
 				} else {
 					return <p>Item not available</p>
 				}
@@ -25,7 +25,7 @@ export default function ShoppingCartPage() {
 		}
 	}
 	return (
-    <div className="flex flex-col gap-1 font-light bg-main-background text-main-font">
+    <div className="flex flex-col h-screen gap-1 font-light bg-main-background text-main-font">
       <Header />
 			{renderItemsInCart()}
 			<Footer />
