@@ -10,7 +10,7 @@ export default function ShoppingCartItem(props) {
 				<img href={props.itemImage} alt="product"/>
 			</section>
 			<section className="w-4/12">
-				<p>{props.itemName}</p>
+				<a href={`/productpage?itemId=${props.itemId}`}>{props.itemName}</a>
 			</section>
 			<section className="w-2/12">
 				<p>qty: {props.itemQuantity}</p>
