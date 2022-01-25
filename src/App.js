@@ -12,11 +12,11 @@ function RenderCard(props) {
   return products.map((product, index) => (
       <ItemCard
       key={index}
-      itemId={products[index]["itemId"]}
-      itemName={products[index]["itemName"]}
-      itemPrice={products[index]["itemPrice"]}
-      itemDesc={products[index]["itemDesc"]}
-      itemImage={products[index]["itemImage"]}  
+      itemId={product["itemId"]}
+      itemName={product["itemName"]}
+      itemPrice={product["itemPrice"]}
+      itemDesc={product["itemDesc"]}
+      itemImage={product["itemImage"]}  
       />
   ))
 }
@@ -26,7 +26,7 @@ export default function App() {
   return (
     <div className="flex flex-col font-light app bg-main-background text-main-font">
       <Header />
-      <section className="main-card-container flex flex-col space-y-0.5">
+      <section className="main-card-container flex flex-col md:flex-wrap md:flex-row space-y-0.5 md:space-y-0 md:gap-y-0.5">
         <RenderCard />
       </section>
       <Footer />
