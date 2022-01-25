@@ -2,7 +2,7 @@ import React from "react";
 export default class ShoppingCart extends React.Component {
   render() {
     return (
-      <div className="shopping-cart-container flex flex-row pb-0.5">
+      <div className="place-content-end w-full mr-6 shopping-cart-container flex flex-row pb-0.5">
         <a className="shopping-cart" href="/shoppingcart">
           <svg
             xmlns="http://www.w3.org/2000/svg"
