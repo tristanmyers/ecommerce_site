@@ -8,6 +8,7 @@ import ItemCard from "./components/ItemCard.js";
 
 export const cartStorage = window.sessionStorage;
 
+
 function RenderCard(props) {
   return products.map((product, index) => (
       <ItemCard
@@ -22,7 +23,6 @@ function RenderCard(props) {
 }
 
 export default function App() {
-  
   return (
     <div className="flex flex-col font-light app bg-main-background text-main-font">
       <Header />

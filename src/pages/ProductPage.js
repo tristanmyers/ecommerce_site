@@ -6,11 +6,12 @@ import Footer from "../components/Footer.js"
 import { products } from "../index.js";
 import { addItemToCart } from "../cartSlice.js"
 
-export default function ProductPage(props) {
+export default function ProductPage() {
 	// show product corresponding to the id in the url
 	let [searchParams] = useSearchParams();
 	let itemId = searchParams.get("itemId");
 	const dispatch = useDispatch();
+
 	return (
 		<div className="flex flex-col h-screen font-light bg-main-background text-main-font">
 			<Header />

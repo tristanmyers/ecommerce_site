@@ -7,7 +7,7 @@ let itemsLength = items === null ? 0 : items.length;
 export const cartSlice = createSlice({
 	name: 'cart',
 	initialState: {
-		itemsInCart: JSON.parse(cartStorage.getItem("itemsInCart")),
+		itemsInCart: JSON.parse(cartStorage.getItem("itemsInCart")) === null ? [] : JSON.parse(cartStorage.getItem("itemsInCart")),
 		numberOfItems: itemsLength
 	},
 	reducers: {
