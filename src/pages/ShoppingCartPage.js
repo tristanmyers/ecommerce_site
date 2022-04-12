@@ -12,6 +12,7 @@ export default function ShoppingCartPage() {
 	// getting ids for available products, for each item check if the id matches an id in availableProductIds if so render the ShoppingCartItem component.
 	function renderItemsInCart() {
 		const availableProductsIds = products.map((product, index) => products[index].itemId);
+
 		if (items === null || items.length === 0) {
 			return <p>No items in cart</p>
 		} else {
