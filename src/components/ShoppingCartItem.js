@@ -6,8 +6,8 @@ export default function ShoppingCartItem(props) {
 	const dispatch = useDispatch();
 
 	return (
-		<div className="h-screen pb-2 m-1 rounded lg:mx-auto lg:w-3/4">
-			<div className="flex flex-col items-center bg-white shadow-lg place-content-center h-fit md:flex-row cart-item-container ">
+		<div className="pb-2 m-1 lg:mx-auto lg:w-3/4">
+			<div className="flex flex-col items-center bg-white rounded shadow-lg place-content-center md:flex-row cart-item-container ">
 				<img src={props.itemImage} alt="product" className="w-full px-4 py-2 md:w-64 h-fit md:h-60"/>
 				<section className="flex flex-col h-full">
 					<a href={`/productpage?itemId=${props.itemId}`} className="self-start py-3">{props.itemName}</a>

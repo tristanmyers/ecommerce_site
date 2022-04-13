@@ -18,7 +18,7 @@ export default class ItemCard extends React.Component {
           </p>
           <Link 
           to={`/productpage?itemId=${this.props.itemId}`}
-          className="underline">
+          className="mt-2 underline">
           See more</Link>
         </div>
       </div>

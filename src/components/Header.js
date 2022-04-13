@@ -6,7 +6,7 @@ export default function Header() {
   const numberOfItems = useSelector((state) => state.cart.numberOfItems);
      
   return (
-    <div className="sticky top-0 flex flex-row shadow-md bg-main-background header-container">
+    <div className="sticky top-0 flex flex-row p-4 shadow-md bg-main-background header-container">
       <h1 className="w-full ml-1 text-2xl logo"><a href="/">Awesome Shoes</a></h1>
       <ShoppingCart numberOfItems={numberOfItems}/>
     </div>
