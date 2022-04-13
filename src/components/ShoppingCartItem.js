@@ -4,23 +4,21 @@ import { removeItemFromCart } from "../cartSlice.js"
 
 export default function ShoppingCartItem(props) {
 	const dispatch = useDispatch();
+
 	return (
-		<div className="flex flex-row items-center h-20 pb-2 mx-5 bg-white rounded cart-item-container">
-			<section className="w-3/12 pl-3">
-				<img href={props.itemImage} alt="product"/>
-			</section>
-			<section className="w-4/12">
-				<a href={`/productpage?itemId=${props.itemId}`}>{props.itemName}</a>
-			</section>
-			<section className="w-2/12">
-				<p>qty: {props.itemQuantity}</p>
-			</section>
-			<section className="w-3/12">
-				<button className="w-auto p-2 border-black h-14 hover:bg-grey cart-remove-button"
-				type="button" 
-				onClick={() => dispatch(removeItemFromCart(props.itemId))}>
-				Remove item</button>
-			</section>
+		<div className="pb-2 m-1 lg:mx-auto lg:w-3/4">
+			<div className="flex flex-col items-center bg-white rounded shadow-lg place-content-center md:flex-row cart-item-container ">
+				<img src={props.itemImage} alt="product" className="w-full px-4 py-2 md:w-64 h-fit md:h-60"/>
+				<section className="flex flex-col h-full">
+					<a href={`/productpage?itemId=${props.itemId}`} className="self-start py-3">{props.itemName}</a>
+					<p>Price: {props.itemPrice}</p>
+					<p>Quantity: {props.itemQuantity}</p>
+					<button className="cart-remove-button md:mt-[50%] my-2 border border-grey p-2 hover:bg-main-font hover:text-white"
+					type="button" 
+					onClick={() => dispatch(removeItemFromCart(props.itemId))}>
+					Remove item</button>
+				</section>
+			</div>
 		</div>
 	);
 }

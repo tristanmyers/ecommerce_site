@@ -7,7 +7,7 @@ let itemsLength = items === null ? 0 : items.length;
 export const cartSlice = createSlice({
 	name: 'cart',
 	initialState: {
-		itemsInCart: JSON.parse(cartStorage.getItem("itemsInCart")),
+		itemsInCart: JSON.parse(cartStorage.getItem("itemsInCart")) === null ? [] : JSON.parse(cartStorage.getItem("itemsInCart")),
 		numberOfItems: itemsLength
 	},
 	reducers: {
@@ -31,10 +31,29 @@ export const cartSlice = createSlice({
 				cartStorage.setItem("itemsInCart", JSON.stringify([{itemId: action.payload, quantity: itemQuantity}]));
 				state.numberOfItems = state.itemsInCart.length;
 			} else {
-				// const currentStorage = state.itemsInCart;
-				state.itemsInCart.push({itemId: action.payload, quantity: itemQuantity});
-				cartStorage.setItem("itemsInCart", JSON.stringify(state.itemsInCart));
-				state.numberOfItems = state.itemsInCart.length;
+				let currentQuantity;
+				let itemIds;
+				if (state.itemsInCart) {
+					itemIds = state.itemsInCart.filter((item, index) => {
+						currentQuantity = Number(item.quantity)
+						if (item.itemId === action.payload ) {
+							currentQuantity = Number(item.quantity)
+							state.itemsInCart.splice(index, 1)
+						}
+						return itemIds
+					});
+				}
+
+				if (itemIds !== null && itemIds.length > 0) {
+					state.itemsInCart.push({itemId: action.payload, quantity: currentQuantity.toString()});
+					cartStorage.setItem("itemsInCart", JSON.stringify(state.itemsInCart));
+					state.numberOfItems = state.itemsInCart.length;
+				} else {					
+					// const currentStorage = state.itemsInCart;
+					state.itemsInCart.push({itemId: action.payload, quantity: itemQuantity});
+					cartStorage.setItem("itemsInCart", JSON.stringify(state.itemsInCart));
+					state.numberOfItems = state.itemsInCart.length;
+				}				
 			}
 		}
 	}

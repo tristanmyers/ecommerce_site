@@ -6,8 +6,8 @@ import { Provider } from 'react-redux';
 import store from "./store.js";
 import App from "./App.js";
 import Cart from "./components/ShoppingCart.js";
-import ProductPage from "./routes/ProductPage.js";
-import ShoppingCartPage from "./routes/ShoppingCartPage.js";
+import ProductPage from "./pages/ProductPage.js";
+import ShoppingCartPage from "./pages/ShoppingCartPage.js";
 
 const rootElement = document.querySelector("#root");
 export const products = [
@@ -49,7 +49,7 @@ ReactDOM.render(
           <Route path="/" element={<App />}/>
           <Route path="cart" element={<Cart />}/>
           <Route path="productpage" element={<ProductPage />}>
-            <Route path=":itemId" element={<ProductPage />} />
+          <Route path=":itemId" element={<ProductPage />} />
           </Route>
           <Route path="shoppingcart" element={<ShoppingCartPage />}/>
         </Routes>
