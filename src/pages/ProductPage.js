@@ -13,22 +13,23 @@ export default function ProductPage() {
 	const dispatch = useDispatch();
 
 	return (
-		<div className="flex flex-col h-screen font-light bg-main-background text-main-font">
+		<div className="flex flex-col h-screen font-light bg-white text-main-font">
 			<Header />
-			<section className="grid grid-cols-2">
-				<div className="pl-2">
-					<img className="self-center w-full h-80" 
+			<div className="h-screen">
+			<section className="flex flex-col py-4 mx-auto my-12 shadow-lg lg:w-1/2">
+				<div className="flex place-content-center">
+					<img className="w-full py-2 md:px-2 md:w-96 h-96" 
 					src={products[itemId]["itemImage"]} alt="shoe"/>
 				</div>
-				<div className="flex flex-col pl-6">
+				<div className="flex flex-col items-center pl-6">
 					<h2 className="text-lg">{products[itemId]["itemName"]}</h2>
 					<p><strong>${products[itemId]["itemPrice"]}</strong></p>
 					<p>{products[itemId]["itemDesc"]}</p>
-					<div className="flex flex-row self-end gap-1 pr-2">
-						<form id="add-to-cart-form" name="add-to-cart-form" className="self-end">
+					<div className="flex flex-row self-center gap-1 pr-2 mt-4">
+						<form id="add-to-cart-form" name="add-to-cart-form">
 							<fieldset>
 								<select
-								className="bg-white border border-black" 
+								className="p-4 bg-white border border-black" 
 								name="number-of-items" id="number-of-items-select" defaultValue="one">
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -49,6 +50,7 @@ export default function ProductPage() {
 					</div>
 				</div>
 			</section>
+			</div>
 			<Footer />
 		</div>
 	);
