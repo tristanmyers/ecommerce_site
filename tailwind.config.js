@@ -9,6 +9,7 @@ module.exports = {
       md: '768px',
       lg: '976px',
       xl: '1440px',
+      xxl: '2560px'
     },
     colors: {
       'main-background': '#E4E4E4',

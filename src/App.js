@@ -26,7 +26,7 @@ export default function App() {
   return (
     <div className="flex flex-col font-light app bg-main-background text-main-font">
       <Header />
-      <section className="main-card-container flex flex-col md:flex-wrap md:flex-row space-y-0.5 md:space-y-0 md:gap-y-0.5">
+      <section className="flex flex-col my-2 main-card-container md:flex-wrap md:flex-row">
         <RenderCard />
       </section>
       <Footer />
